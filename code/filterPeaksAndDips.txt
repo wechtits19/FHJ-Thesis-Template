@@ -1,0 +1,57 @@
+# Combine peaks and dips, filter out those where the difference is very small
+from enum import Enum
+
+
+class Extremum(Enum):
+    PEAK = 1
+    DIP = 0
+
+
+def peak_or_dip_filter_condition(dip_or_peak: Extremum,
+                                 curvature_array: np.ndarray,
+                                 peak_array: np.ndarray,
+                                 dip_array: np.ndarray, index: int,
+                                 threshold: float = 0.1):
+    current_array = peak_array if dip_or_peak else dip_array
+    neighbor_array = dip_array if dip_or_peak else peak_array
+    before = curvature_array.take(neighbor_array[index - 1], mode='wrap')
+    current = curvature_array.take(current_array[index], mode='wrap')
+    after = curvature_array.take(
+        neighbor_array.take([index + 1], mode='wrap'), mode='wrap')
+    return np.abs(before - current) > threshold and np.abs(
+        after - current) > threshold
+
+
+peaks_and_dips = []
+for i, contour_peaks in enumerate(peaks):
+    contour_peaks_and_dips = []
+    curvature = contours_with_curvatures[i][1]
+    for j in np.arange(0, len(contour_peaks[0])):
+        peak = contour_peaks[0][j]
+        dip = dips[i, 0][j]
+        if peak < dip:
+            if peak_or_dip_filter_condition(Extremum.PEAK, curvature,
+                                            contour_peaks[0], dips[i, 0], j):
+                contour_peaks_and_dips.append(
+                    np.array([peak, Extremum.PEAK.value]))
+            if peak_or_dip_filter_condition(Extremum.DIP, curvature,
+                                            contour_peaks[0], dips[i, 0], j):
+                contour_peaks_and_dips.append(
+                    np.array([dip, Extremum.DIP.value]))
+        else:
+            if peak_or_dip_filter_condition(Extremum.DIP, curvature,
+                                            contour_peaks[0], dips[i, 0], j):
+                contour_peaks_and_dips.append(
+                    np.array([dip, Extremum.DIP.value]))
+            if peak_or_dip_filter_condition(Extremum.PEAK, curvature,
+                                            contour_peaks[0], dips[i, 0], j):
+                contour_peaks_and_dips.append(
+                    np.array([peak, Extremum.PEAK.value]))
+
+    contour_peaks_and_dips = np.asarray(contour_peaks_and_dips)
+    if len(contour_peaks_and_dips) > 0:
+        peaks_and_dips.append(contour_peaks_and_dips[
+                                  contour_peaks_and_dips[:, 0] < len(
+                                      curvature)])
+    else:
+        peaks_and_dips.append(contour_peaks_and_dips)

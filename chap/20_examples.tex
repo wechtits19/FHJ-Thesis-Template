@@ -1,0 +1,58 @@
+\chapter{Some usage examples}
+\label{ch:usage-examples}
+
+\section{Section}
+\label{sec:section}
+Blablabla
+
+\subsection{Subsection}
+\label{subsec:subsection}
+Sub-blalba
+
+\subsubsection{Bitmap image}
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.5\textwidth, interpolate=false]{res/magnified_bitmap}
+    \caption{Magnified raster graphic}
+    \label{fig:Bitmap}
+\end{figure}
+
+\subsubsection{SVG image}
+Die Nutzung von SVG-Grafiken funktioniert gleich wie die von \glqq normalen\grqq Bildern, aber es muss \textbf{inkscape} installiert sein.
+
+\begin{figure}[!ht]
+    \centering
+    \includesvg[width=0.5\textwidth, inkscapearea=page]{res/magnified_vector}
+    \caption{Magnified vector graphic}
+    \label{fig:Vector}
+\end{figure}
+
+\subsubsection{Code}
+
+Direkt hier:
+
+\begin{minted}{python}
+from scipy.signal import argrelmax
+
+# Get curvature extrema
+peaks = []
+dips = []
+
+for contour in contours_with_curvatures:
+    smoothed_curvature = smooth(contour[1])[5:-5]
+    peaks.append(argrelmax(smoothed_curvature, mode='wrap'))
+    dips.append(argrelmax(-smoothed_curvature, mode='wrap'))
+
+peaks = np.asarray(peaks, dtype=object)
+dips = np.asarray(dips, dtype=object)
+\end{minted}
+
+\hspace{1cm}
+
+Von einem File:
+
+\inputminted[firstline=10, lastline=22]{python}{code/filterPeaksAndDips.txt}
+
+Nutzung von Abkürzungen wie \ac{IDE} und eines Zitats~\cite{Selinger.2003}.
+Und erneute Nutzung von Abkürzungen wie \ac{IDE}.

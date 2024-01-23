@@ -1,0 +1,33 @@
+\begin{titlepage}
+\begin{center}
+{\setstretch{1.5}
+\textbf{FH JOANNEUM - University of Applied Sciences\\}\vfill
+%title
+% Add/remove colon after title if needed
+\textbf{ \Large{\title{}:} \subtitle{}}\vfill
+
+\ifthenelse{\equal{\yourLanguage}{english}}{
+  \textbf{Master's thesis\\
+  submitted at the Degree Programme Business Informatics\\
+  for the degree of „DiplomingenieurIn (DI)“\\}\vfill
+  % author
+  \textbf{Author:\\\yourName}\vfill
+  % supervisor
+  \textbf{Supervisor:\\\yourSupervisor}\vfill
+  \textbf{\yourPlace{}, \submissionYear\\}\vfill
+}{
+  {\textbf{Bachelorarbeit 1\\
+zur Erlangung des akademischen Grades „DiplomingenieurIn (DI)"\\
+eingereicht am Studiengang Business Informatics\\}}\vfill
+% author
+\textbf{Verfasser:\\\yourName}\vfill
+% supervisor
+\textbf{Betreuer:\\\yourSupervisor}\vfill
+\textbf{\yourPlace{}, \submissionMonth\:\submissionYear\\}\vfill
+
+}
+% logo
+\includegraphics[height=1.65cm]{res/logo.pdf}
+}
+\end{center}
+\end{titlepage}

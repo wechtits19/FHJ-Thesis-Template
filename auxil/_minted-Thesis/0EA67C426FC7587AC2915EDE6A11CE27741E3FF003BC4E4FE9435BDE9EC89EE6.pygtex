@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{from} \PYG{n+nn}{scipy.signal} \PYG{k+kn}{import} \PYG{n}{argrelmax}
+
+\PYG{c+c1}{\PYGZsh{} Get curvature extrema}
+\PYG{n}{peaks} \PYG{o}{=} \PYG{p}{[]}
+\PYG{n}{dips} \PYG{o}{=} \PYG{p}{[]}
+
+\PYG{k}{for} \PYG{n}{contour} \PYG{o+ow}{in} \PYG{n}{contours\PYGZus{}with\PYGZus{}curvatures}\PYG{p}{:}
+    \PYG{n}{smoothed\PYGZus{}curvature} \PYG{o}{=} \PYG{n}{smooth}\PYG{p}{(}\PYG{n}{contour}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{])[}\PYG{l+m+mi}{5}\PYG{p}{:}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{5}\PYG{p}{]}
+    \PYG{n}{peaks}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{argrelmax}\PYG{p}{(}\PYG{n}{smoothed\PYGZus{}curvature}\PYG{p}{,} \PYG{n}{mode}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}wrap\PYGZsq{}}\PYG{p}{))}
+    \PYG{n}{dips}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{argrelmax}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{n}{smoothed\PYGZus{}curvature}\PYG{p}{,} \PYG{n}{mode}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}wrap\PYGZsq{}}\PYG{p}{))}
+
+\PYG{n}{peaks} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{asarray}\PYG{p}{(}\PYG{n}{peaks}\PYG{p}{,} \PYG{n}{dtype}\PYG{o}{=}\PYG{n+nb}{object}\PYG{p}{)}
+\PYG{n}{dips} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{asarray}\PYG{p}{(}\PYG{n}{dips}\PYG{p}{,} \PYG{n}{dtype}\PYG{o}{=}\PYG{n+nb}{object}\PYG{p}{)}
+\end{Verbatim}

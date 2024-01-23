@@ -1,0 +1,15 @@
+\ifthenelse{\equal{\yourLanguage}{english}}{
+    \chapter*{Abbreviations}
+    \addcontentsline{toc}{chapter}{Abbreviations}
+}{
+    \chapter*{Abkürzungsverzeichnis}
+    \addcontentsline{toc}{chapter}{Abkürzungsverzeichnis}
+}
+
+
+
+\begin{acronym}[Visual Studio]%Warum auch immer, aber ohne dem VS schauts mies aus
+    \acro{W3C}{World Wide Web Consortium}
+    \acro{IDE}{Integrated Development Environment}
+    %etc...
+\end{acronym}

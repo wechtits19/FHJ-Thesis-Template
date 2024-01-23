@@ -1,0 +1,83 @@
+\documentclass[final, a4paper, oneside, fontsize=12]{scrbook}
+
+% =====================================================
+% Thesis settings
+% =====================================================
+\def \title{Title of your thesis} % add colon on coverpage if needed
+\def \subtitle{Subtitle of your thesis}
+\def \yourName{Your Name}
+\def \yourPlace{City}
+\def \submissionYear{2024}
+\def \submissionMonth{September}
+\def \yourSupervisor{Dr. John Doe}
+\def \yourLanguage{english} % options: german, english
+
+% Carlito (Unix) or Calibri as default font
+%\def \defaultFont{Carlito}
+\def \defaultFont{Calibri}
+
+% =====================================================
+% include preamble settings
+% =====================================================
+\include{chap/00_preamble}
+
+% =====================================================
+% Thesis structure - chapter includes
+% =====================================================
+\begin{document}
+\ifthenelse{\equal{\yourLanguage}{english}}{
+  \selectlanguage{english}
+}{
+  \selectlanguage{ngerman}
+}
+\sloppy
+% coverpage
+\include{chap/01_coverpage}
+% pagestyle
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \lfoot{\title}
+	\rfoot{\thepage}
+    \renewcommand{\headrulewidth}{0pt}% Line at the header invisible
+    \renewcommand{\footrulewidth}{0.4pt}% Line at the footer visible
+}
+\pagestyle{plain}
+\renewcommand{\chaptermark}[1]{ \markboth{#1}{} }
+
+\frontmatter
+% Ehrenwörtliche Erklärung NICHT unterschreiben sofern die Arbeit digital abgegeben wird!
+\include{chap/02_declaration}
+\tableofcontents 
+\listoffigures
+\listoftables
+\include{chap/03_abbreviations}
+\include{chap/04_abstract}
+
+% content
+\mainmatter
+% pagestyle
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \lfoot{\leftmark}
+	\rfoot{\thepage}
+    \renewcommand{\headrulewidth}{0pt}% Line at the header invisible
+    \renewcommand{\footrulewidth}{0.4pt}% Line at the footer visible
+}
+\lfoot{\leftmark}
+
+\include{chap/10_introduction}
+\include{chap/20_examples}
+%...
+
+
+% Cite all (only to test bibliography)
+%\nocite{*}
+
+\backmatter
+%BibTeX
+
+\bibliographystyle{apalike}
+\bibliography{chap/90_bibtex}
+\label{chap:Literaturverzeichnis}
+
+\end{document}

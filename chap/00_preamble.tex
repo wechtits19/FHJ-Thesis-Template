@@ -1,0 +1,154 @@
+%****************************************
+% 00_preamble
+%****************************************
+
+% import Latex packages
+\usepackage{ifthen}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{luainputenc}
+
+% \includegraphics
+\usepackage{graphicx}
+% Bilder/Tabellen drehen
+\usepackage{rotating}
+% Rotatebox
+\usepackage[export]{adjustbox}
+\usepackage{graphics}
+% Mathematikpaket
+\usepackage{amsmath}
+% To write vectors: \vb
+\usepackage{physics}
+% für die Auswahl von Schriften
+\usepackage{fontspec}
+% Copperplate-ähnliche Schrift
+\newfontfamily{\RegencyScriptFLFLarge}[Scale=1.7]{RegencyScriptFLF}
+\newfontfamily{\RegencyScriptFLFNormal}[Scale=1.4]{RegencyScriptFLF}
+\DeclareTextFontCommand \calli \RegencyScriptFLFLarge
+\DeclareTextFontCommand \calliUpper \RegencyScriptFLFNormal
+% language packages
+\usepackage[english, ngerman]{babel}
+\usepackage{blindtext}
+% für spezifisches Layout 
+\usepackage{geometry}
+\usepackage{layout}
+\usepackage{setspace}
+% "ansehliche" Tabellen
+\usepackage{booktabs}
+% erweiterte Möglichkeiten für die Positionierung von Bildern, Tabellen, ..
+\usepackage{float}
+% \FloatBarrier setzen
+\usepackage{placeins}
+% Blocksatz verbessern bei pdf Erzeugung
+\usepackage{microtype} 	
+% Kapitelüberschrift bei Querverweisen anzeigen
+\usepackage{nameref}
+% Ermöglichen, Grafiken nebeneinander und innerhalb einer Grafik zu platzieren
+\usepackage{subfig}				
+% Einfügen von PDF Dateien
+\usepackage{pdfpages}
+% Einfügen von SVG images
+\usepackage{svg}
+% Anmerkungen im Text
+%\usepackage{todonotes}
+% für Tabellen
+\usepackage{array}
+% Farbdefinitionen
+\usepackage{xcolor}
+\definecolor{LightGray}{gray}{0.9}
+% für Code
+\usepackage[outputdir=auxil]{minted}
+\setminted[python]{
+    frame=lines,
+    framesep=2mm,
+    bgcolor=LightGray,
+    fontsize=\footnotesize,
+    linenos
+}
+%\renewcommand{\listingscaption}{Program code}
+%\renewcommand{\listoflistingscaption}{List of Program Code}
+%\newcommand{\pylisting}[2]{
+%\begin{listing}[H]
+%\begin{minted}{python}
+%#2
+%\end{minted}
+%\caption{#1}
+%%\label{lst:example}
+%\end{listing}
+%}
+
+% PDF
+%\usepackage[unicode=true,pdfusetitle,bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,breaklinks=true,pdfborder={0 0 1},backref=false]{hyperref}
+% Abkürzungen
+\usepackage[printonlyused]{acronym}
+% Zeilenumbrüche in url
+%\usepackage{luacode}
+%\luaexec{require("lua/betterurl")}
+%\renewcommand{\url}[1]{\luadirect{
+%    betterurl(\luastringN{#1})
+%}}
+% Alternative, da obiges keine underscores unterstützt
+\usepackage{hyperref}
+\urlstyle{same}
+
+% Kopf- und Fußzeile
+\usepackage{fancyhdr}
+
+% kleinere Überschriften
+\KOMAoptions{headings=small}
+% Konfiguration des Inhaltsverzeichnisses
+\KOMAoptions{toc=listof}
+\KOMAoptions{toc=bib}
+
+% Carlito (Unix) or Calibri as default font
+\setmainfont{\defaultFont{}}
+
+% Kein Einrücken der ersten Zeile eines Absatzes, dafür
+% Kleiner Abstand zwischen den Absätzen
+%\setlength{\parskip}{\smallskipamount}
+\setlength{\parindent}{0pt}
+
+% keine Einrückung der Texte bei Bildunterschriften
+\usepackage{caption} 
+\captionsetup{format=plain} 
+
+\makeatletter
+
+% Alle Nummerierungen kapitelweise (chapter)
+\numberwithin{figure}{chapter}
+\numberwithin{equation}{chapter}
+\numberwithin{table}{chapter}
+
+% Inhaltsverzeichnis Tiefe
+%\setcounter{secnumdepth}{2}
+%\setcounter{tocdepth}{2}
+
+% Aktuelles Datum initialisieren (falls benötigt)
+\@ifundefined{date}{}{\date{}}
+
+\makeatother
+
+% Definition der Ränder
+%\geometry{paperheight=297mm, 
+%	paperwidth=210mm,
+%	top=25mm,
+%	textwidth=155mm,
+%	textheight=252mm,
+%	right=25mm,
+%	heightrounded,
+%	headheight=5mm,
+%	headsep=10mm,
+%	foot=15mm,
+%	marginparsep=0mm,
+%	marginparwidth=20mm
+%}
+\geometry{left=3.5cm,
+    right=3cm,
+    top=3cm,
+    bottom=3cm
+}
+
+
+%Quotation marks:
+%„ -> ALT 0132
+%“ -> ALT 0147

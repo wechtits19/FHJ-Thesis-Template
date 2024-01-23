@@ -1,0 +1,19 @@
+{\ifthenelse{\equal{\yourLanguage}{english}}{
+  \chapter{Abstract}
+}{
+  \chapter{Kurzfassung}
+}
+
+Lorem ipsum..
+
+\ifthenelse{\equal{\yourLanguage}{english}}{
+  \begin{otherlanguage}{ngerman}
+  \chapter{Kurzfassung}
+}{
+  \begin{otherlanguage}{english}
+  \chapter{Abstract}
+}
+
+Lorem ipsum..
+
+\end{otherlanguage}}
