@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4a6f6671-7388-45f1-be79-e2af91c7b14c" name="Default Changelist" comment="update readme">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-    </list>
+    <list default="true" id="4a6f6671-7388-45f1-be79-e2af91c7b14c" name="Default Changelist" comment="add tracking for workspace.xml (idea run configuration)" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -153,7 +151,7 @@
       <workItem from="1706020834708" duration="54000" />
       <workItem from="1706020906457" duration="1675000" />
       <workItem from="1706022665039" duration="5221000" />
-      <workItem from="1706090050077" duration="911000" />
+      <workItem from="1706090050077" duration="985000" />
     </task>
     <task id="LOCAL-00001" summary="initially commit thesis template">
       <option name="closed" value="true" />
@@ -171,7 +169,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706025103093</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add tracking for workspace.xml (idea run configuration)">
+      <option name="closed" value="true" />
+      <created>1706091197229</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1706091197229</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,7 +186,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initially commit thesis template" />
     <MESSAGE value="update readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="update readme" />
+    <MESSAGE value="add tracking for workspace.xml (idea run configuration)" />
+    <option name="LAST_COMMIT_MESSAGE" value="add tracking for workspace.xml (idea run configuration)" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
