@@ -4,13 +4,13 @@
       <compiler>LATEXMK</compiler>
       <compiler-path />
       <sumatra-path />
-      <pdf-viewer>NONE</pdf-viewer>
+      <pdf-viewer>SUMATRA</pdf-viewer>
       <viewer-command />
       <compiler-arguments>-e $pdflatex='lualatex' -shell-escape</compiler-arguments>
       <envs />
       <main-file>$PROJECT_DIR$/Thesis.tex</main-file>
       <output-path>$PROJECT_DIR$</output-path>
-      <auxil-path>$PROJECT_DIR$</auxil-path>
+      <auxil-path>$PROJECT_DIR$/auxil</auxil-path>
       <compile-twice>false</compile-twice>
       <output-format>PDF</output-format>
       <latex-distribution>MIKTEX</latex-distribution>
