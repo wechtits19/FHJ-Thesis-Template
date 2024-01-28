@@ -1,7 +1,7 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="BAC-2 bibliography" type="BIBTEX_RUN_CONFIGURATION" factoryName="LaTeX configuration factory">
     <texify-bibtex>
-      <compiler>BIBTEX</compiler>
+      <compiler>BIBER</compiler>
       <compiler-path />
       <compiler-arguments />
       <envs />
