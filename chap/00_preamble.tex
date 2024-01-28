@@ -96,6 +96,16 @@
 \KOMAoptions{toc=listof}
 \KOMAoptions{toc=bib}
 
+% --- Imports the biblatex package
+% For sorting options refer to https://tex.stackexchange.com/a/51439
+\usepackage{csquotes}
+\usepackage[
+    backend=biber,
+    style=apa,
+    sorting=none
+]{biblatex}
+\addbibresource{chap/95_biblatex.bib}
+
 % Carlito (Unix) or Calibri as default font
 \setmainfont{\defaultFont{}}
 
