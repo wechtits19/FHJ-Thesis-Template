@@ -96,6 +96,21 @@
 \KOMAoptions{toc=listof}
 \KOMAoptions{toc=bib}
 
+% --- Insert pagebreaks if there is not enough space for new sections
+\usepackage{needspace}
+
+\newcommand{\needspacelength}{\needspace{\yourNeedSpaceLength\baselineskip}}
+
+% Redefine \section, \subsection, and \subsubsection to include \myneedspacelength
+% Refer to https://tex.stackexchange.com/a/47372
+\NewCommandCopy{\oldsection}{\section}
+\NewCommandCopy{\oldsubsection}{\subsection}
+\NewCommandCopy{\oldsubsubsection}{\subsubsection}
+
+\renewcommand{\section}[1]{\needspacelength\oldsection{#1}}
+\renewcommand{\subsection}[1]{\needspacelength\oldsubsection{#1}}
+\renewcommand{\subsubsection}[1]{\needspacelength\oldsubsubsection{#1}}
+
 % --- Imports the biblatex package
 % For sorting options refer to https://tex.stackexchange.com/a/51439
 \usepackage{csquotes}
