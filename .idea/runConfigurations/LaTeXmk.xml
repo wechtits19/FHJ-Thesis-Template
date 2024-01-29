@@ -18,8 +18,6 @@
       <bib-run-config>[]</bib-run-config>
       <makeindex-run-config>[]</makeindex-run-config>
     </texify>
-    <method v="2">
-      <option name="RunConfigurationTask" enabled="true" run_configuration_name="BAC-2 bibliography" run_configuration_type="BIBTEX_RUN_CONFIGURATION" />
-    </method>
+    <method v="2" />
   </configuration>
 </component>
