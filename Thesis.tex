@@ -11,6 +11,7 @@
 \def \submissionMonth{September}
 \def \yourSupervisor{Dr. John Doe}
 \def \yourLanguage{english} % options: german, english
+\def \yourNeedSpaceLength{8} % define how many lines need to be free for next section before page break
 
 % Carlito (Unix) or Calibri as default font
 %\def \defaultFont{Carlito}
@@ -19,7 +20,7 @@
 % =====================================================
 % include preamble settings
 % =====================================================
-\include{chap/00_preamble}
+\input{chap/00_preamble}
 
 % =====================================================
 % Thesis structure - chapter includes
@@ -74,10 +75,9 @@
 %\nocite{*}
 
 \backmatter
-%BibTeX
 
-\bibliographystyle{apalike}
-\bibliography{chap/90_bibtex}
+% BibLaTex
+\printbibliography
 \label{chap:Literaturverzeichnis}
 
 \end{document}
